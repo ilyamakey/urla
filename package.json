@@ -1,0 +1,25 @@
+{
+  "name": "urla",
+  "version": "1.0.0",
+  "description": "layout",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilyamakey/urla.git"
+  },
+  "author": "IM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilyamakey/urla/issues"
+  },
+  "homepage": "https://github.com/ilyamakey/urla#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-sass": "^3.1.0"
+  }
+}
