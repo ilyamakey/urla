@@ -44,7 +44,28 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	console.log("HELLO WORLD");
+	var pics = document.getElementById('pics');
+
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', 'http://api.pixplorer.co.uk/image', true);
+	xhr.send();
+
+	xhr.onreadystatechange = function() {
+	    if (this.readyState != 4) return;
+
+	    // по окончании запроса доступны:
+	    // status, statusText
+	    // responseText, responseXML (при content-type: text/xml)
+
+	    if (this.status != 200) {
+	        // обработать ошибку
+	        alert('ошибка: ' + (this.status ? this.statusText : 'запрос не удался'));
+	        return;
+	    }
+	};
+
+	console.log(xhr);
+
 
 
 /***/ }
