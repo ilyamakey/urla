@@ -44,28 +44,23 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	var pics = document.getElementById('pics');
-
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'http://api.pixplorer.co.uk/image', true);
-	xhr.send();
+	xhr.open('GET', 'https://api.github.com/repos/ilyamakey/urla/contents/src/pics', true);
 
-	xhr.onreadystatechange = function() {
-	    if (this.readyState != 4) return;
-
-	    // по окончании запроса доступны:
-	    // status, statusText
-	    // responseText, responseXML (при content-type: text/xml)
-
-	    if (this.status != 200) {
-	        // обработать ошибку
-	        alert('ошибка: ' + (this.status ? this.statusText : 'запрос не удался'));
-	        return;
-	    }
-	};
-
-	console.log(xhr);
-
+	var app = new Vue({
+	  el: '#root',
+	  data: {
+	    pics: '',
+	  },
+	  methods: {
+	    loadPics: function () {
+	      this.pics = JSON.parse(xhr.response);
+	    },
+	  },
+	  created: function () {
+	    xhr.send();
+	  },
+	});
 
 
 /***/ }
