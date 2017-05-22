@@ -15,4 +15,3 @@
 //     xhr.send();
 //   },
 // });
-console.log('HELLo')
