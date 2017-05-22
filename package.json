@@ -4,7 +4,9 @@
   "description": "layout",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "webpack-dev-server --open",
+    "gulp": "gulp",
+    "dev": "webpack"
   },
   "repository": {
     "type": "git",
@@ -21,9 +23,8 @@
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean-css": "^3.0.4",
     "gulp-sass": "^3.1.0",
-    "gulp-webpack": "^1.5.0"
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
   },
-  "dependencies": {
-    "gulp-webpack": "^1.5.0"
-  }
+  "dependencies": {}
 }
