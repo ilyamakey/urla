@@ -1,1 +1,8 @@
-body{background-color:green}.div{background-color:#000}p{color:#0f0}
+.div {
+  background-color: black; }
+
+body {
+  background-color: green; }
+
+p {
+  color: lime; }

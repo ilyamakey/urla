@@ -4,7 +4,8 @@
   "description": "layout",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack",
+    "server": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
@@ -17,13 +18,12 @@
   },
   "homepage": "https://github.com/ilyamakey/urla#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-clean-css": "^3.0.4",
-    "gulp-sass": "^3.1.0",
-    "gulp-webpack": "^1.5.0"
+    "css-loader": "^0.28.2",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.5",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
   },
-  "dependencies": {
-    "gulp-webpack": "^1.5.0"
-  }
+  "dependencies": {}
 }
