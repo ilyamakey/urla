@@ -15,3 +15,4 @@
 //     xhr.send();
 //   },
 // });
+console.log('hello world');
