@@ -5,15 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>URLA Landing</title>
-  <script src="https://unpkg.com/vue@2.3.2/dist/vue.js"></script>
+  <!-- <script src="https://unpkg.com/vue@2.3.2/dist/vue.js"></script> -->
   <link rel="stylesheet" href="/main.css">
 </head>
 <body>
   <header class="header">
-    <nav class="menu">
-      <a href="#" class="menu__link"></a>
-      <a href="#" class="menu__link munu__link--active"></a>
-    </nav>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="header__logo">Urlaubsgluck</div>
+      </div>
+      <div class="col-xs-12 first-xs last-sm">
+        <nav class="menu">
+          <a href="#" class="menu__link">Log in</a>
+          <a href="#" class="menu__link munu__link--active">Sign up</a>
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <article class="article">
+          <h1>share your holiday dreams</h1>
+          <p>And find a perfect partner to fullfill it</p>
+          <button type="button" class="btn">Find your holiday partner</button>
+        </article>
+      </div>
+    </div>
   </header>
   <!-- <div id="root">
     <button v-on:click="loadPics">click me</button>
@@ -21,7 +37,7 @@
       <li v-for="item in pics"><img v-bind:src="item.html_url + '?raw=true'"></li>
     </ul>
   </div> -->
-  
+
 
 <script src="/main.js"></script>
 

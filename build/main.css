@@ -1046,20 +1046,12 @@ template {
   font-weight: 300;
   font-style: normal; }
 
+.header {
+  background: url(/src/pics/bg-header-mob.png) no-repeat #FE8423; }
+
 html {
-  font-size: 10px; }
+  font-size: 20px; }
 
 body {
   font-family: Mont;
-  font-weight: normal;
-  font-size: 2rem;
-  padding: 10px;
-  background-color: blue; }
-
-.2 {
-  font-family: Mont;
-  font-weight: bold; }
-
-.3 {
-  font-family: Roboto;
-  font-weight: 300; }
+  font-weight: normal; }
