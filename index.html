@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="/main.css">
 </head>
 <body>
-  <header class="header">
+  <header class="header container-fluid">
     <div class="row">
       <div class="col-xs-12">
         <div class="header__logo">Urlaubsgluck</div>
@@ -31,7 +31,73 @@
       </div>
     </div>
   </header>
-  <!-- <div id="root">
+  <main class="container-fluid">
+    <article class="slides">
+      <div class="row center-xs">
+        <h3>How Urlaubsgluck works?</h3>
+      </div>
+      <section class="slider row center-xs">
+        <div class="slide col-xs-12 col-lg-4">slide1</div>
+        <div class="slide col-xs-12 col-lg-4">slide2</div>
+        <div class="slide col-xs-12 col-lg-4">slide3</div>
+      </section>
+    </article>
+    <article class="partner">
+      <div class="row center-xs">
+        <h3>Meet a partner for your best holiday</h3>
+      </div>
+      <section class="partner-list row center-xs">
+        <div class="partner-list__item col-xs-12 col-sm-6 col-md-3">1</div>
+        <div class="partner-list__item col-xs-12 col-sm-6 col-md-3">2</div>
+        <div class="partner-list__item col-xs-12 col-sm-6 col-md-3">3</div>
+        <div class="partner-list__item col-xs-12 col-sm-6 col-md-3">4</div>
+      </section>
+      <button type="button" class="btn">See other partners</button>
+    </article>
+    <article class="activities">
+      <div class="row center-xs">
+        <h3>Discover holiday activity ideas</h3>
+      </div>
+      <section class="tablet row center-xs">
+        <div class="col-xs">
+          <img src="/src/pics/slide-car-mob.jpg" alt="?">
+        </div>
+      </section>
+      <section class="tablet__footer row center-xs">
+        <div class="col-xs-12">
+          <h3>Discover holiday activity ideas</h3>
+        </div>
+        <div class="col-xs-12">
+          <input type="text" name="search" value="Enter your interests">
+        </div>
+        <div class="col-xs-12">
+          <button type="button" class="btn">Search partners</button>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="container-fluid">
+    <section class="row">
+      <div class="col-xs-12">
+        <h3>URLAUBSGLUCK</h3>
+      </div>
+      <div class="footer__company col-xs-12">
+        <ul>
+          <h4>Company</h4>
+        </ul>
+        <li class="footer__company__item"></li>
+        <li class="footer__company__item"></li>
+        <li class="footer__company__item"></li>
+        <li class="footer__company__item"></li>
+      </div>
+    <div class="col-xs-12">
+      <h4>Partners</h4>
+    </div>
+    <div class="footer__logo col-xs-12">LOGO</div>
+  </section>
+  </footer>
+
+   <!-- <div id="root">
     <button v-on:click="loadPics">click me</button>
     <ul>
       <li v-for="item in pics"><img v-bind:src="item.html_url + '?raw=true'"></li>
