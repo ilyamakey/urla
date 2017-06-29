@@ -1,15 +1,23 @@
 .JS-tablet
-  // justify-content: space-around
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-items: center
   &__slide
-    display: flex
+    display: inline-flex
     justify-content: center
-    max-width: 500px
-    max-height: 500px
-    margin: 5px
+    border: 1px solid none
+    border-radius: 10px
+    max-width: 400px
+    margin: 5px 10px
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%)
     img
       position: relative
+      border: 1px solid none
+      border-radius: 10px
       align-self: center
       flex-shrink: 0
+      z-index: -1
     h3
       position: absolute
       color: $white

@@ -1,5 +1,7 @@
 .footer
-  &__company
+  border-top: 4px solid $pink
+  &__logo
+    color: $pink
   &__menu
     color: $black
     &__item
@@ -11,10 +13,13 @@
   &__partner-logo
     text-transform: uppercase
     color: $grey-light
+    &__heading
+      margin: 0
+      letter-spacing: 2px
     &::after
       content: ""
       display: block
       width: 110px
       height: 24px
       background: url(/src/pics/footer-logo.svg)
-      margin: auto
+      margin: 10px auto
