@@ -34,4 +34,4 @@ xhr.onload = function() {
   });
 };
 
-xhr.send();
+// xhr.send();
