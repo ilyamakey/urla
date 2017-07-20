@@ -1,5 +1,5 @@
 .header
-  background: url(/src/pics/bg-mob-header.png) no-repeat $black
+  background: url(/src/pics/bg-mob-header.png) no-repeat $orange
   background-size: cover
   color: $white
   &__logo
@@ -7,9 +7,19 @@
     font-size: 2rem
     font-weight: bold
     text-transform: uppercase
+    @media (min-width: 768px)
+      margin: 50px 0 18px 0
   p
     font-family: Roboto
     font-size: 1.8rem
     font-weight: 300
+    @media (min-width: 768px)
+      font-size: 2.4rem
   &__btn
     margin: 0 auto 138px
+    @media (min-width: 768px)
+      width: 226px
+      margin: 0 auto 234px
+  @media (min-width: 768px)
+    background: url(/src/pics/bg-tablet-header.png) no-repeat $black
+    background-size: cover

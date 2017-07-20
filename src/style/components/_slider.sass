@@ -1,8 +1,11 @@
 .slider
   color: $white
+  &__header
+    margin: 12% 0 5%
   &__slide
     box-sizing: border-box
     display: flex
+    position: relative
     flex-direction: column
     justify-content: flex-end
     max-width: 300px
@@ -10,12 +13,48 @@
     padding: 10px
     margin: 5px 0
     text-align: left
+    @media (min-width: 768px)
+      width: 236px
+      height: 400px
+      margin: auto
     &--img1
       background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url(/src/pics/slide-pc-mob.png) no-repeat
+      @media (min-width: 768px)
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url(/src/pics/slide-pc-tablet.png) no-repeat
     &--img2
       background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url(/src/pics/slide-car-mob.png) no-repeat
+      @media (min-width: 768px)
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url(/src/pics/slide-car-tablet.png) no-repeat
     &--img3
       background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url(/src/pics/slide-legs-mob.png) no-repeat
+      @media (min-width: 768px)
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url(/src/pics/slide-legs-tablet.png) no-repeat
+    &__pagination
+      display: none
+      @media (min-width: 768px)
+        display: flex
+        align-self: center
+        position: absolute
+        box-sizing: border-box
+        width: 100%
+        padding: 0 10px
+        justify-content: space-between
+        top: 40px
+      &__btn
+        width: 30px
+        height: 56px
+        border: 0
+        outline: 0
+        padding: 0
+        background-color: transparent
+        &--left
+          background: url(/src/pics/slide-left-arrow.svg)
+          &:hover
+            background: url(/src/pics/slide-left-arrow--white.svg)
+        &--right
+          background: url(/src/pics/slide-right-arrow.svg)
+          &:hover
+            background: url(/src/pics/slide-right-arrow--white.svg)
     &__label
       display: flex
       align-items: center
