@@ -2,11 +2,21 @@
   border-top: 4px solid $pink
   &__logo
     color: $pink
+  &__company
+    @media (min-width: 768px)
+      margin: 22px 0
+  &__partners
+    @media (min-width: 768px)
+      margin: 22px 0
   &__menu
     color: $black
     &__item
       display: inline-block
       margin: 0 5px
+      @media (min-width: 768px)
+        display: block
+        margin: 5px auto
+        text-align: justify
       a
         color: $grey
         font-family: Roboto

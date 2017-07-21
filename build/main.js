@@ -76,31 +76,29 @@
 /* 1 */
 /***/ (function(module, exports) {
 
-// var xhr = new XMLHttpRequest();
-// xhr.open('GET', 'https://api.github.com/repos/ilyamakey/urla/contents/src/pics', true);
-//
-// var app = new Vue({
-//   el: '#root',
-//   data: {
-//     pics: '',
-//   },
-//   methods: {
-//     loadPics: function () {
-//       this.pics = JSON.parse(xhr.response);
-//     },
-//   },
-//   created: function () {
-//     xhr.send();
-//   },
-// });
-var url = 'https://api.github.com/repos/ilyamakey/urla/contents/src/pics';
-var tablet = document.querySelector('.tablet');
+var url = 'https://api.github.com/repos/ilyamakey/urla/contents/src/images';
+var tablet = document.querySelector('.JS-tablet');
 var xhr = new XMLHttpRequest();
 var data = ['Gop', 'TOP', 'Hlop'];
-var template = function () {
+var template = function (obj) {
   var div = document.createElement('div');
-  div.className = "tablet__slide";
-  div.innerHTML = "<div><h3>JOPA</h3></div>";
+  var img = document.createElement('img');
+  var heading = '<h3>' + cutString(obj.name) + '</h3>';
+
+  function cutString (str) {
+    if (str.length > 10) {
+      var modifiedString = str.substr(0, 15) + '...';
+      return modifiedString;
+    }
+    else return str
+  };
+
+  div.className = "JS-tablet__slide";
+  img.setAttribute('src', obj.html_url + '?raw=true');
+
+  div.appendChild(img);
+  div.insertAdjacentHTML('beforeEnd', heading);
+
   return div;
 };
 
@@ -109,11 +107,12 @@ xhr.open('GET', url, true);
 xhr.onload = function() {
   var data = JSON.parse(xhr.response);
   data.forEach(function(elem) {
-    tablet.appendChild(template());
+    tablet.appendChild(template(elem));
+    console.log(elem);
   });
 };
 
-xhr.send();
+// xhr.send();
 
 
 /***/ }),
