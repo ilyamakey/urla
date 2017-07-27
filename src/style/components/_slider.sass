@@ -1,7 +1,7 @@
 .slider
   color: $white
   &__header
-    margin: 12% 0 5%
+    margin: 85px 0 4%
   &__slide
     box-sizing: border-box
     display: flex
@@ -17,18 +17,26 @@
       width: 236px
       height: 400px
       margin: auto
+    @media (min-width: 1440px)
+      width: 300px
     &--img1
       background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url(/src/pics/slide-pc-mob.png) no-repeat
       @media (min-width: 768px)
         background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url(/src/pics/slide-pc-tablet.png) no-repeat
+      @media (min-width: 1440px)
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url(/src/pics/slide-pc-desktop.png) no-repeat
     &--img2
       background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url(/src/pics/slide-car-mob.png) no-repeat
       @media (min-width: 768px)
         background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url(/src/pics/slide-car-tablet.png) no-repeat
+      @media (min-width: 1440px)
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url(/src/pics/slide-car-desktop.png) no-repeat
     &--img3
       background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url(/src/pics/slide-legs-mob.png) no-repeat
       @media (min-width: 768px)
         background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url(/src/pics/slide-legs-tablet.png) no-repeat
+      @media (min-width: 1440px)
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%), url(/src/pics/slide-legs-desktop.png) no-repeat
     &__pagination
       display: none
       @media (min-width: 768px)

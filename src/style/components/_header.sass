@@ -9,12 +9,16 @@
     text-transform: uppercase
     @media (min-width: 768px)
       margin: 50px 0 18px 0
-  p
-    font-family: Roboto
-    font-size: 1.8rem
-    font-weight: 300
-    @media (min-width: 768px)
-      font-size: 2.4rem
+  &__article
+    @media (min-width: 1440px)
+      width: 55%
+      margin: auto
+    p
+      font-family: Roboto
+      font-size: 1.8rem
+      font-weight: 300
+      @media (min-width: 768px)
+        font-size: 2.4rem
   &__btn
     margin: 0 auto 138px
     @media (min-width: 768px)
@@ -22,4 +26,7 @@
       margin: 0 auto 234px
   @media (min-width: 768px)
     background: url(/src/pics/bg-tablet-header.png) no-repeat $black
+    background-size: cover
+  @media (min-width: 1440px)
+    background: url(/src/pics/bg-desktop-header.png) no-repeat $black
     background-size: cover
