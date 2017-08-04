@@ -17,8 +17,12 @@ var pictures = new AjaxRequest();
 //
 // });
 
-var slider = new Slider('.slider__slide__pagination');
-console.log(slider);
-slider.el.addEventListener("click", function (ev) {
-  console.log(ev);
+var slider = new Slider('.slider__slide__pagination', 'slider__slide', 3);
+// console.log(slider.slide);
+
+slider.control.addEventListener("click", function (evt) {
+
+  return slider.changeSlide(evt);
+  // console.log(e);
+
 });
