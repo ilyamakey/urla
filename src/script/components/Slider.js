@@ -2,6 +2,11 @@ function Slider(pagination, slide, slidesQuantity) {
   this.control = document.querySelector(pagination);
   this.slide = document.getElementsByClassName(slide);
   this.slidesQuantity = slidesQuantity;
+
+  for (var i = 0; i < this.slide.length; i++) {
+    this.slide[i].count = 0;
+  }
+
 };
 
 Slider.prototype.changeSlide = function (evt) {
@@ -21,7 +26,7 @@ Slider.prototype.changeSlide = function (evt) {
 
            slideNumber = i;
 
-        }
+        };
 
       };
 
@@ -31,26 +36,35 @@ Slider.prototype.changeSlide = function (evt) {
 
   function moveSlide(side) {
 
+    if (side == undefined) return;
+
     var item = currentSlide();
     var slideSize = self.slide[item].clientWidth;
 
-    if (!self.slide[item].style.backgroundPositionX) {
+    var newStep = function () {
 
-      self.slide[item].style.backgroundPositionX = 0;
-      console.log(self.slide[item].style.backgroundPositionX);
+      if (side == 'left' && self.slide[item].count > -self.slidesQuantity) {
+
+        self.slide[item].count--;
+        var step = self.slide[item].count * slideSize;
+
+        return step;
+
+      } else if (side == 'right' && self.slide[item].count < 0) {
+
+        self.slide[item].count++;
+        var step = self.slide[item].count * slideSize;
+
+        return step;
+
+      }
 
     };
 
-    if (side == 'left' && self.slide[item].style.backgroundPositionX > (-(self.slidesQuantity * slideSize) )) {
 
-      self.slide[item].style.backgroundPositionX = self.slide[item].style.backgroundPositionX - slideSize;
-      console.log(self.slide[item].style.backgroundPositionX);
+    self.slide[item].style.backgroundPositionX = newStep() + "px";
 
-    } else if (side == 'right' && self.slide[item].style.backgroundPositionX < (self.slidesQuantity * slideSize)) {
-
-      self.slide[item].style.backgroundPositionX = self.slide[item].style.backgroundPositionX + slideSize;
-
-    };
+    console.log(self.slide[item].count);
 
   };
 

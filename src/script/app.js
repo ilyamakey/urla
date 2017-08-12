@@ -17,12 +17,12 @@ var pictures = new AjaxRequest();
 //
 // });
 
-var slider = new Slider('.slider__slide__pagination', 'slider__slide', 3);
+var slider = new Slider('.slider__slide__pagination','slider__slide', 2);
 // console.log(slider.slide);
 
 slider.control.addEventListener("click", function (evt) {
-
+console.log(evt);
   return slider.changeSlide(evt);
-  // console.log(e);
+
 
 });
