@@ -1,70 +1,46 @@
-function Slider(pagination, slide, slidesQuantity) {
-  this.control = document.querySelector(pagination);
-  this.slide = document.getElementsByClassName(slide);
-  this.slidesQuantity = slidesQuantity;
+function Slider(slide, images) {
+  this.slide = document.querySelector(slide);
+  this.images = images;
+  this.styles = getComputedStyle(this.slide);
+  this.currentSlide;
 
-  for (var i = 0; i < this.slide.length; i++) {
-    this.slide[i].count = 0;
-  }
+};
+
+Slider.prototype.loadSlide = function(slideNumber) {
+
+  var defaultSlide = 0;
+
+  if(slideNumber >= this.images.length) throw new SyntaxError("Can't load more slides than it has");
+
+  this.slide.style.backgroundImage = this.images[slideNumber];
+  this.currentSlide = slideNumber;
+  console.log(this.currentSlide);
 
 };
 
 Slider.prototype.changeSlide = function (evt) {
 
   var side = evt.target.value;
-  var btnName = evt.target.name;
 
   var self = this;
 
-  var currentSlide = function() {
-
-      var slideNumber;
-
-      for (var i = 0; i < self.slide.length; i++) {
-
-        if (self.slide[i].className == btnName) {
-
-           slideNumber = i;
-
-        };
-
-      };
-
-      return slideNumber;
-
-  };
-
   function moveSlide(side) {
 
-    if (side == undefined) return;
+    if (!side) return;
 
-    var item = currentSlide();
-    var slideSize = self.slide[item].clientWidth;
+    if (side == "left" && self.currentSlide > 0) {
 
-    var newStep = function () {
+      self.currentSlide--;
+      self.slide.style.backgroundImage = self.images[self.currentSlide];
+      console.log(self.currentSlide);
 
-      if (side == 'left' && self.slide[item].count > -self.slidesQuantity) {
+    } else if (side == "right" && self.currentSlide < self.images.length - 1) {
 
-        self.slide[item].count--;
-        var step = self.slide[item].count * slideSize;
+      self.currentSlide++;
+      self.slide.style.backgroundImage = self.images[self.currentSlide];
+      console.log(self.currentSlide);
 
-        return step;
-
-      } else if (side == 'right' && self.slide[item].count < 0) {
-
-        self.slide[item].count++;
-        var step = self.slide[item].count * slideSize;
-
-        return step;
-
-      }
-
-    };
-
-
-    self.slide[item].style.backgroundPositionX = newStep() + "px";
-
-    console.log(self.slide[item].count);
+    }
 
   };
 
