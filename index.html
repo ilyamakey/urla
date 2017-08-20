@@ -142,10 +142,12 @@
           <p>Hi! What are your holiday interests?</p>
         </div>
         <div class="col-xs-12 col-sm-offset-1 col-sm-5 col-md-4">
-          <input type="text" name="search" value="Enter your interests">
+          <form id="searchActivities" action="index.php">
+            <input type="text" name="search" value="Enter your interests">
+          </form>
         </div>
         <div class="col-xs-12 col-sm-4 start-sm">
-          <button type="button" class="btn">Search Ideas!</button>
+          <button type="submit" form="searchActivities" class="btn">Search Ideas!</button>
         </div>
       </section>
     </article>
