@@ -2,48 +2,56 @@ var url = 'https://api.github.com/repos/ilyamakey/urla/contents/src/images';
 
 import AjaxRequest from "./components/AjaxRequest";
 import Template from "./components/Template";
-import Slider from "./components/Slider";
-import backgroundImages from "./backgroundImages";
+import slides from "./slides";
 
 var pictures = new AjaxRequest();
 
-// pictures.load(url, function() {
-//
-//     return pictures.render(
-//
-//       '.JS-tablet',
-//       new Template('JS-tablet__slide')
-//
-//     );
-//
-// });
+pictures.load(url, function() {
 
-var sliderLeft = new Slider('.slider__slide--img1', backgroundImages);
+    return pictures.render(
 
-sliderLeft.loadSlide(0);
+      '.JS-tablet',
+      new Template('JS-tablet__slide')
 
-sliderLeft.slide.addEventListener("click", function (evt) {
-
-  return sliderLeft.changeSlide(evt);
+    );
 
 });
 
-var sliderMiddle = new Slider('.slider__slide--img2', backgroundImages);
+var but = document.getElementById('but');
+var newData = [];
 
-sliderMiddle.loadSlide(1);
+function getInputData(field) {
+  var input = document.getElementById(field);
 
-sliderMiddle.slide.addEventListener("click", function (evt) {
+  return input.value;
+};
 
-  return sliderMiddle.changeSlide(evt);
+// console.log(!getInputData('input'));
 
-});
+but.addEventListener('click', function() {
 
-var sliderRight = new Slider('.slider__slide--img3', backgroundImages);
+  // if(!getInputData('input')) return;
 
-sliderRight.loadSlide(2);
+  pictures.data.forEach(function(elem) {
 
-sliderRight.slide.addEventListener("click", function (evt) {
+    if(elem.name.search(
+      new RegExp(getInputData('input'), "i")
+    ) != -1) {
 
-  return sliderRight.changeSlide(evt);
+      console.log(elem.name);
+      newData.push(elem);
+
+    }
+
+  });
+
+  pictures.data = newData;
+
+  pictures.clear('.JS-tablet').render(
+    '.JS-tablet',
+    new Template('JS-tablet__slide')
+  );
+
+
 
 });

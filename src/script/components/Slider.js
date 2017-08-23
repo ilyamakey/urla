@@ -14,7 +14,7 @@ Slider.prototype.loadSlide = function(slideNumber) {
 
   this.slide.style.backgroundImage = this.images[slideNumber];
   this.currentSlide = slideNumber;
-  console.log(this.currentSlide);
+  // console.log(this.currentSlide);
 
 };
 
@@ -32,13 +32,13 @@ Slider.prototype.changeSlide = function (evt) {
 
       self.currentSlide--;
       self.slide.style.backgroundImage = self.images[self.currentSlide];
-      console.log(self.currentSlide);
+      // console.log(self.currentSlide);
 
     } else if (side == "right" && self.currentSlide < self.images.length - 1) {
 
       self.currentSlide++;
       self.slide.style.backgroundImage = self.images[self.currentSlide];
-      console.log(self.currentSlide);
+      // console.log(self.currentSlide);
 
     }
 

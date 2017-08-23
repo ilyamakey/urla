@@ -1,5 +1,18 @@
-function AjaxRequest() {
+function AjaxRequest(data) {
   this.xhr = new XMLHttpRequest();
+  this.data = data; //delete
+};
+
+AjaxRequest.prototype.clear = function(node) {
+  var node = document.querySelector(node);
+  var divs = node.getElementsByTagName('div');
+
+  for (var i = 0; i < divs.length; /* no interator needed*/) {
+    node.removeChild(divs[i]);
+  };
+
+  return this; // for chaining
+
 };
 
 AjaxRequest.prototype.render = function (node, template) {
