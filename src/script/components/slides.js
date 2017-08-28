@@ -1,5 +1,5 @@
-import Slider from "./components/Slider";
-import backgroundImages from "./backgroundImages";
+import Slider from "../source/Slider";
+import backgroundImages from "../backgroundImages";
 
 var sliderLeft = new Slider('.slider__slide--img1', backgroundImages);
 
