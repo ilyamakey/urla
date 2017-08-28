@@ -1,4 +1,4 @@
-import Slider from "../source/Slider";
+import Slider from "../modules/Slider";
 import backgroundImages from "../backgroundImages";
 
 var sliderLeft = new Slider('.slider__slide--img1', backgroundImages);

@@ -1,6 +1,6 @@
 import pictures from "./picturesLoader";
-import Template from "../source/Template";
-import {render, removeIn} from "../source/Display.js";
+import Template from "../modules/Template";
+import {render, removeIn} from "../modules/Display.js";
 
 var searchForm = document.forms.searchActivities;
 var searchValue = searchForm.elements.search;
@@ -10,8 +10,6 @@ var newData = [];
 searchForm.addEventListener('submit', function (evt) {
 
   evt.preventDefault();
-
-  console.log(searchValue.value);
 
   if(!searchValue.value) {
 

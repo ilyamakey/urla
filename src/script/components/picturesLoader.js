@@ -1,6 +1,6 @@
-import AjaxRequest from "../source/AjaxRequest";
-import {render, removeIn} from "../source/Display.js";
-import Template from "../source/Template";
+import AjaxRequest from "../modules/AjaxRequest";
+import {render, removeIn} from "../modules/Display.js";
+import Template from "../modules/Template";
 
 var pictures = new AjaxRequest();
 
