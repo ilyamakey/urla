@@ -2,7 +2,7 @@ import AjaxRequest from "../modules/AjaxRequest";
 import {render, removeIn} from "../modules/Display.js";
 import Template from "../modules/Template";
 
-// var pictures = new AjaxRequest();
+var pictures = new AjaxRequest();
 
 var url = 'https://api.github.com/repos/ilyamakey/urla/contents/src/images';
 
