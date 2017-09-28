@@ -12,14 +12,15 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build'),
+    // publicPath: "/build/",
     filename: '[name].js'
   },
-
   module: {
     rules: [{
         test: /\.sass$/,
         use: ExtractTextPlugin.extract({
-          use: ['css-loader', 'sass-loader']
+          use: ["css-loader?url=false", "sass-loader?sourceMap"],
+          // publicPath: "/build/"
         })
       }]
   },

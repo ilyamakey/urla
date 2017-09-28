@@ -1089,24 +1089,27 @@ template {
 
 @font-face {
   font-family: Mont;
-  src: url(/fonts/Montserrat-Regular.ttf);
+  src: url(../fonts/Montserrat-Regular.ttf);
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: Mont;
-  src: url(/fonts/Montserrat-Bold.ttf);
+  src: url(../fonts/Montserrat-Bold.ttf);
   font-weight: bold;
   font-style: normal; }
 
 @font-face {
   font-family: Roboto;
-  src: url(/fonts/Roboto-Light.ttf);
+  src: url(../fonts/Roboto-Light.ttf);
   font-weight: 300;
   font-style: normal; }
 
 html {
   font-size: 10px; }
+  @media (min-width: 1200px) {
+    html {
+      font-size: 11px; } }
 
 body {
   font-family: Mont;
@@ -1147,13 +1150,18 @@ h4 {
 h5 {
   font-size: 1rem; }
 
+.warning {
+  color: #FF4E50;
+  text-transform: uppercase; }
+
 .btn {
   box-sizing: border-box;
   width: 280px;
-  padding: 12px;
+  padding: 10px 12px;
   background-color: #FF4E50;
   border-radius: 19px;
-  border: 0;
+  border: 2px solid #FF4E50;
+  outline: 0;
   color: #FFF;
   font-family: Mont;
   font-weight: bold;
@@ -1161,13 +1169,20 @@ h5 {
   @media (min-width: 768px) {
     .btn {
       width: auto; } }
+  .btn:hover {
+    background-color: #FFF;
+    color: #FF4E50;
+    border: 2px solid #FF4E50; }
   .btn--white {
     background-color: #FFF;
     border: 2px solid #FF4E50;
     color: #FF4E50; }
+    .btn--white:hover {
+      background-color: #FF4E50;
+      color: #FFF; }
 
 .header {
-  background: url(/src/pics/bg-mob-header.png) no-repeat #FE8423;
+  background: url(..../src/bg-mob-header.png) no-repeat #FE8423;
   background-size: cover;
   color: #FFF; }
   .header__logo {
@@ -1178,12 +1193,16 @@ h5 {
     @media (min-width: 768px) {
       .header__logo {
         margin: 50px 0 18px 0; } }
-  .header p {
+  @media (min-width: 1440px) {
+    .header__article {
+      width: 55%;
+      margin: auto; } }
+  .header__article p {
     font-family: Roboto;
     font-size: 1.8rem;
     font-weight: 300; }
     @media (min-width: 768px) {
-      .header p {
+      .header__article p {
         font-size: 2.4rem; } }
   .header__btn {
     margin: 0 auto 138px; }
@@ -1191,9 +1210,17 @@ h5 {
       .header__btn {
         width: 226px;
         margin: 0 auto 234px; } }
+    @media (min-width: 1200px) {
+      .header__btn {
+        width: auto;
+        padding: 12px 20px; } }
   @media (min-width: 768px) {
     .header {
-      background: url(/src/pics/bg-tablet-header.png) no-repeat #000;
+      background: url(../src/pics/bg-tablet-header.png) no-repeat #000;
+      background-size: cover; } }
+  @media (min-width: 1440px) {
+    .header {
+      background: url(../src/pics/bg-desktop-header.png) no-repeat #000;
       background-size: cover; } }
 
 .menu {
@@ -1214,38 +1241,50 @@ h5 {
 .slider {
   color: #FFF; }
   .slider__header {
-    margin: 12% 0 5%; }
+    margin: 85px 0 4%; }
   .slider__slide {
     box-sizing: border-box;
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: flex-end;
-    max-width: 300px;
+    width: 300px;
     height: 240px;
     padding: 10px;
-    margin: 5px 0;
+    margin: 5px auto;
     text-align: left; }
     @media (min-width: 768px) {
       .slider__slide {
         width: 236px;
         height: 400px;
         margin: auto; } }
+    @media (min-width: 1440px) {
+      .slider__slide {
+        width: 300px; } }
     .slider__slide--img1 {
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url(/src/pics/slide-pc-mob.png) no-repeat; }
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url(../src/pics/slide-pc-mob.png) no-repeat; }
       @media (min-width: 768px) {
         .slider__slide--img1 {
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url(/src/pics/slide-pc-tablet.png) no-repeat; } }
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url(../src/pics/slide-pc-tablet.png) no-repeat; } }
+      @media (min-width: 1440px) {
+        .slider__slide--img1 {
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url(../src/pics/slide-pc-desktop.png) no-repeat; } }
     .slider__slide--img2 {
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url(/src/pics/slide-car-mob.png) no-repeat; }
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url(../src/pics/slide-car-mob.png) no-repeat; }
       @media (min-width: 768px) {
         .slider__slide--img2 {
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url(/src/pics/slide-car-tablet.png) no-repeat; } }
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url(../src/pics/slide-car-tablet.png) no-repeat; } }
+      @media (min-width: 1440px) {
+        .slider__slide--img2 {
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url(../src/pics/slide-car-desktop.png) no-repeat; } }
     .slider__slide--img3 {
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url(/src/pics/slide-legs-mob.png) no-repeat; }
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url(../src/pics/slide-legs-mob.png) no-repeat; }
       @media (min-width: 768px) {
         .slider__slide--img3 {
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url(/src/pics/slide-legs-tablet.png) no-repeat; } }
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url(../src/pics/slide-legs-tablet.png) no-repeat; } }
+      @media (min-width: 1440px) {
+        .slider__slide--img3 {
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%), url(../src/pics/slide-legs-desktop.png) no-repeat; } }
     .slider__slide__pagination {
       display: none; }
       @media (min-width: 768px) {
@@ -1266,13 +1305,13 @@ h5 {
         padding: 0;
         background-color: transparent; }
         .slider__slide__pagination__btn--left {
-          background: url(/src/pics/slide-left-arrow.svg); }
+          background: url(../src/pics/slide-left-arrow.svg); }
           .slider__slide__pagination__btn--left:hover {
-            background: url(/src/pics/slide-left-arrow--white.svg); }
+            background: url(../src/pics/slide-left-arrow--white.svg); }
         .slider__slide__pagination__btn--right {
-          background: url(/src/pics/slide-right-arrow.svg); }
+          background: url(../src/pics/slide-right-arrow.svg); }
           .slider__slide__pagination__btn--right:hover {
-            background: url(/src/pics/slide-right-arrow--white.svg); }
+            background: url(../src/pics/slide-right-arrow--white.svg); }
     .slider__slide__label {
       display: flex;
       align-items: center;
@@ -1290,9 +1329,22 @@ h5 {
       font-weight: 300;
       color: #CCC; }
 
+@media (min-width: 768px) {
+  .partner__header {
+    margin: 85px 0 4%; } }
+
+.partner__btn {
+  margin-top: 20px; }
+  @media (min-width: 768px) {
+    .partner__btn {
+      width: 193px; } }
+
 .partner__slide {
   margin: 5px 0;
   text-align: center; }
+  @media (min-width: 768px) {
+    .partner__slide {
+      margin: 0 10% 10%; } }
   .partner__slide__pic {
     position: relative;
     width: 120px;
@@ -1304,13 +1356,13 @@ h5 {
     width: 40px;
     height: 40px; }
     .partner__slide__icon--img1 {
-      background: url(/src/pics/sprite-icons.png) -137px -2px no-repeat; }
+      background: url(../src/pics/sprite-icons.png) -137px -2px no-repeat; }
     .partner__slide__icon--img2 {
-      background: url(/src/pics/sprite-icons.png) -2px -2px no-repeat; }
+      background: url(../src/pics/sprite-icons.png) -2px -2px no-repeat; }
     .partner__slide__icon--img3 {
-      background: url(/src/pics/sprite-icons.png) -47px -2px no-repeat; }
+      background: url(../src/pics/sprite-icons.png) -47px -2px no-repeat; }
     .partner__slide__icon--img4 {
-      background: url(/src/pics/sprite-icons.png) -92px -2px no-repeat; }
+      background: url(../src/pics/sprite-icons.png) -92px -2px no-repeat; }
   .partner__slide__paragraph {
     font-family: Roboto;
     font-weight: 300;
@@ -1342,9 +1394,20 @@ h5 {
       align-self: center;
       margin: 0; }
 
+@media (min-width: 768px) {
+  .activities__header {
+    margin: 5% auto 3%; } }
+
+@media (min-width: 768px) {
+  .activities__footer {
+    margin: 4% auto 4%; } }
+
 .activities__footer p {
   font-family: Roboto;
   font-size: 1.8rem; }
+  @media (min-width: 768px) {
+    .activities__footer p {
+      margin: 4% auto 5%; } }
 
 .activities__footer input {
   box-sizing: border-box;
@@ -1354,25 +1417,49 @@ h5 {
   border-radius: 5px;
   border: 1px solid #CCC;
   color: #999; }
+  @media (min-width: 1200px) {
+    .activities__footer input {
+      width: 350px; } }
 
 .activities__footer button {
   margin-bottom: 40px; }
+  @media (min-width: 768px) {
+    .activities__footer button {
+      width: 160px; } }
 
 .footer {
   border-top: 4px solid #FF4E50; }
+  @media (min-width: 768px) {
+    .footer {
+      margin-bottom: 20px; } }
   .footer__logo {
     color: #FF4E50; }
+  @media (min-width: 768px) {
+    .footer__company {
+      margin: 22px 0; } }
+  @media (min-width: 768px) {
+    .footer__partners {
+      display: inline-block;
+      margin: 22px 15%; } }
   .footer__menu {
     color: #000; }
     .footer__menu__item {
       display: inline-block;
       margin: 0 5px; }
+      @media (min-width: 768px) {
+        .footer__menu__item {
+          display: block;
+          margin: 5px auto;
+          text-align: justify; } }
       .footer__menu__item a {
         color: #999;
         font-family: Roboto; }
   .footer__partner-logo {
     text-transform: uppercase;
     color: #CCC; }
+    @media (min-width: 768px) {
+      .footer__partner-logo {
+        display: inline-block; } }
     .footer__partner-logo__heading {
       margin: 0;
       letter-spacing: 2px; }
@@ -1381,5 +1468,5 @@ h5 {
       display: block;
       width: 110px;
       height: 24px;
-      background: url(/src/pics/footer-logo.svg);
+      background: url(../src/pics/footer-logo.svg);
       margin: 10px auto; }
