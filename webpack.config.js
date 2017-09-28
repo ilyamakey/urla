@@ -12,7 +12,6 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build'),
-    // publicPath: "/build/",
     filename: '[name].js'
   },
   module: {
@@ -20,7 +19,6 @@ module.exports = {
         test: /\.sass$/,
         use: ExtractTextPlugin.extract({
           use: ["css-loader?url=false&minimize", "sass-loader?sourceMap"],
-          // publicPath: "/build/"
         })
       }]
   },
