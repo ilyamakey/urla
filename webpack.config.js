@@ -19,7 +19,7 @@ module.exports = {
     rules: [{
         test: /\.sass$/,
         use: ExtractTextPlugin.extract({
-          use: ["css-loader?url=false", "sass-loader?sourceMap"],
+          use: ["css-loader?url=false&minimize", "sass-loader?sourceMap"],
           // publicPath: "/build/"
         })
       }]
